@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>URILE BIIKUSE— Creative Designer</title>
+  <meta name="description" content="URILE Visual — Portfolio kreatif untuk desain poster, branding, logo, dan visual design.">
+
+  <style>
+    /* =========================
+       RESET
+    ========================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, Arial, sans-serif;
+      background: #080909;
+      color: #f5f5f5;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    /* =========================
+       VARIABLES
+    ========================== */
+    :root {
+      --bg: #080909;
+      --card: #111313;
+      --card2: #151818;
+      --text: #f5f5f5;
+      --muted: #8d9393;
+      --accent: #b7ff3c;
+      --border: rgba(255,255,255,.08);
+      --radius: 22px;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 18px 6%;
+      background: rgba(8,9,9,.72);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid transparent;
+      transition: .3s;
+    }
+
+    nav.scrolled {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #b9bdbd;
+      font-size: 14px;
+      transition: .25s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: white;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 120px 6% 70px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: var(--accent);
+      opacity: .07;
+      filter: blur(120px);
+      border-radius: 50%;
+      right: 5%;
+      top: 15%;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      width: 100%;
+      margin: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 15px var(--accent);
+    }
+
+    .hero h1 {
+      max-width: 850px;
+      font-size: clamp(48px, 8vw, 100px);
+      line-height: .96;
+      letter-spacing: -5px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero p {
+      max-width: 570px;
+      color: var(--muted);
+      font-size: 17px;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 13px 20px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      transition: .25s;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #080909;
+      font-weight: 800;
+      border-color: var(--accent);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(183,255,60,.15);
+    }
+
+    .btn-secondary {
+      color: white;
+      background: rgba(255,255,255,.03);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,.08);
+      transform: translateY(-3px);
+    }
+
+    /* =========================
+       SECTION
+    ========================== */
+    section {
+      padding: 100px 6%;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .section-label {
+      color: var(--accent);
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(32px, 5vw, 55px);
+      letter-spacing: -2px;
+      line-height: 1;
+    }
+
+    .section-description {
+      color: var(--muted);
+      max-width: 420px;
+      font-size: 14px;
+    }
+
+    /* =========================
+       ABOUT
+    ========================== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .about-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 35px;
+    }
+
+    .about-card h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .about-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .stat {
+      background: var(--card2);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 27px;
+      color: var(--accent);
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* =========================
+       PORTFOLIO
+    ========================== */
+    .filters {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 25px;
+    }
+
+    .filter {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: #aaa;
+      padding: 9px 15px;
+      border-radius: 100px;
+      cursor: pointer;
+      font-size: 12px;
+      transition: .25s;
+    }
+
+    .filter.active,
+    .filter:hover {
+      background: var(--accent);
+      color: #080909;
+      border-color: var(--accent);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 18px;
+    }
+
+    .project {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--card);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: .4s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-image {
+      aspect-ratio: 16/10;
+      background: #181b1b;
+      overflow: hidden;
+    }
+
+    .project-image img {
+      height: 100%;
+      object-fit: cover;
+      transition: .5s;
+    }
+
+    .project:hover img {
+      transform: scale(1.04);
+    }
+
+    .project-info {
+      padding: 20px;
+    }
+
+    .project-info small {
+      color: var(--accent);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .project-info h3 {
+      margin-top: 4px;
+      font-size: 20px;
+    }
+
+    .project-info p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 5px;
+    }
+
+    /* =========================
+       SERVICES
+    ========================== */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 15px;
+    }
+
+    .service {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 30px;
+      border-radius: var(--radius);
+      transition: .3s;
+    }
+
+    .service:hover {
+      transform: translateY(-6px);
+      border-color: rgba(183,255,60,.3);
+    }
+
+    .service-number {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .service h3 {
+      margin: 35px 0 10px;
+      font-size: 21px;
+    }
+
+    .service p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =========================
+       CONTACT
+    ========================== */
+    .contact-box {
+      background: var(--accent);
+      color: #080909;
+      border-radius: 30px;
+      padding: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .contact-box h2 {
+      font-size: clamp(35px, 5vw, 60px);
+      letter-spacing: -3px;
+      line-height: 1;
+    }
+
+    .contact-box p {
+      margin-top: 12px;
+      max-width: 500px;
+      font-size: 14px;
+      opacity: .7;
+    }
+
+    .contact-button {
+      white-space: nowrap;
+      background: #080909;
+      color: white;
+      padding: 15px 22px;
+      border-radius: 100px;
+      transition: .25s;
+    }
+
+    .contact-button:hover {
+      transform: translateY(-3px);
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+    footer {
+      padding: 35px 6%;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* =========================
+       REVEAL ANIMATION
+    ========================== */
+    .reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+      }
+    /* =========================
+       RESPONSIVE
+    ========================== */
+    @media (max-width: 800px) {
+
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 6%;
+        right: 6%;
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        background: #101212;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 10px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 13px;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .about-grid,
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-description {
+        margin-top: 15px;
+      }
+
+      .contact-box {
+        padding: 35px;
+        display: block;
+      }
+
+      .contact-button {
+        display: inline-block;
+        margin-top: 25px;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .hero {
+        padding-top: 130px;
+      }
+
+      .hero h1 {
+        letter-spacing: -3px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 75px 5%;
+      }
+
+      .about-card {
+        padding: 25px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVBAR
+  ========================== -->
+
+  <nav id="navbar">
+    <div class="nav-inner">
+
+      <a href="#home" class="logo">
+        URILE BIIKUSE<span>.</span>
+      </a>
+
+      <button class="menu-btn" id="menuBtn">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <main>
+
+    <section class="hero" id="home">
+
+      <div class="hero-content reveal">
+
+        <div class="eyebrow">
+          <span class="dot"></span>
+          AVAILABLE FOR CREATIVE PROJECTS
+        </div>
+
+        <h1>
+          Turning ideas into
+          <span>visuals.</span>
+        </h1>
+
+        <p>
+          URILE BIIKUSE adalah creative design studio yang berfokus
+          pada poster, branding, logo, dan visual design dengan
+          pendekatan modern dan clean.
+        </p>
+
+        <div class="buttons">
+          <a href="#portfolio" class="btn btn-primary">
+            Explore Work
+          </a>
+
+          <a href="#contact" class="btn btn-secondary">
+            Let's Talk
+          </a>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section id="about">
+
+      <div class="container">
+
+        <div class="section-head reveal">
+
+          <div>
+            <div class="section-label">About</div>
+            <h2 class="section-title">Who I am.</h2>
+          </div>
+
+          <p class="section-description">
+            Visual designer yang suka mengubah ide sederhana
+            menjadi desain yang memiliki karakter.
+          </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+          <div class="about-card reveal">
+
+            <h3>Design with purpose.</h3>
+
+            <p>
+              Saya percaya desain bukan hanya tentang membuat
+              sesuatu terlihat bagus. Setiap warna, tipografi,
+              layout, dan elemen harus memiliki alasan.
+            </p>
+
+            <div class="stats">
+
+              <div class="stat">
+                <strong>40+</strong>
+                <span>Projects</span>
+              </div>
+
+              <div class="stat">
+                <strong>4+</strong>
+                <span>Categories</span>
+              </div>
+
+              <div class="stat">
+                <strong>∞</strong>
+                <span>Ideas</span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="about-card reveal">
+
+            <h3>My approach.</h3>
+
+            <p>
+              Simple, clean, modern, dan tetap memiliki karakter.
+              Saya mengutamakan hierarchy, typography, spacing,
+              dan visual balance agar desain terasa nyaman dilihat.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PORTFOLIO
+    ========================== -->
+
+    <section id="portfolio">
+
+      <div class="container">
+
+        <div class="section-head reveal">
+
+          <div>
+            <div class="section-label">Selected Work</div>
+            <h2 class="section-title">My portfolio.</h2>
+          </div>
+
+          <p class="section-description">
+            Beberapa project pilihan dari berbagai kategori
+            desain visual.
+          </p>
+
+        </div>
+
+
+        <div class="filters reveal">
+
+          <button class="filter active" data-filter="all">
+            All
+          </button>
+
+          <button class="filter" data-filter="poster">
+            Poster
+          </button>
+
+          <button class="filter" data-filter="branding">
+            Branding
+          </button>
+
+          <button class="filter" data-filter="logo">
+            Logo
+          </button>
+
+        </div>
+
+
+        <div class="portfolio-grid">
+
+          <!-- PROJECT 1 -->
+
+          <article class="project reveal" data-category="poster">
+
+            <div class="project-image">
+              <img
+                src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=1200&q=80"
+                alt="Poster Design">
+            </div>
+
+            <div class="project-info">
+
+              <small>Poster</small>
+
+              <h3>Visual Impact</h3>
+
+              <p>
+                Modern promotional poster.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 2 -->
+
+          <article class="project reveal" data-category="branding">
+
+            <div class="project-image">
+              <img
+                src="https://images.unsplash.com/photo-1634942537034-2531766767d1?auto=format&fit=crop&w=1200&q=80"
+                alt="Branding Design">
+            </div>
+
+            <div class="project-info">
+
+              <small>Branding</small>
+
+              <h3>Brand Identity</h3>
+
+              <p>
+                Clean and memorable identity system.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 3 -->
+
+          <article class="project reveal" data-category="logo">
+
+            <div class="project-image">
+              <img
+                src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1200&q=80"
+                alt="Logo Design">
+            </div>
+
+            <div class="project-info">
+
+              <small>Logo</small>
+
+              <h3>Monogram Studio</h3>
+
+              <p>
+                Elegant monogram exploration.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 4 -->
+
+          <article class="project reveal" data-category="poster">
+
+            <div class="project-image">
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80"
+                alt="Creative Poster">
+            </div>
+
+            <div class="project-info">
+
+              <small>Poster</small>
+
+              <h3>Digital Culture</h3>
+
+              <p>
+                Experimental digital composition.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SERVICES
+    ========================== -->
+
+    <section id="services">
+
+      <div class="container">
+
+        <div class="section-head reveal">
+
+          <div>
+            <div class="section-label">Services</div>
+            <h2 class="section-title">What I do.</h2>
+          </div>
+
+          <p class="section-description">
+            Beberapa layanan desain yang tersedia.
+          </p>
+
+        </div>
+
+
+        <div class="services">
+
+          <div class="service reveal">
+
+            <span class="service-number">01</span>
+
+            <h3>Poster Design</h3>
+
+            <p>
+              Poster untuk social media, event,
+              promosi, campaign, dan kebutuhan visual lainnya.
+            </p>
+
+          </div>
+
+
+          <div class="service reveal">
+
+            <span class="service-number">02</span>
+
+            <h3>Brand Identity</h3>
+
+            <p>
+              Membantu membangun identitas visual brand
+              agar terlihat konsisten dan profesional.
+            </p>
+
+          </div>
+
+
+          <div class="service reveal">
+
+            <span class="service-number">03</span>
+
+            <h3>Logo Design</h3>
+
+            <p>
+              Logo sederhana, modern, dan memiliki
+              karakter yang sesuai dengan brand.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact">
+
+      <div class="container">
+
+        <div class="contact-box reveal">
+
+          <div>
+
+            <h2>
+              Have a project?
+            </h2>
+
+            <p>
+              Punya ide atau project yang ingin dibuat?
+              Mari buat sesuatu yang keren bersama.
+            </p>
+
+          </div>
+
+          <a
+            href="https://wa.me/6281910649572"
+            target="_blank"
+            class="contact-button"
+          >
+            Contact Me ↗
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <span>
+        © 2026 URILE BIKUSE
+      </span>
+
+      <span>
+        Designed with purpose.
+      </span>
+
+    </div>
+
+  </footer>
+
+  
+  <script>
+
+/* =========================================
+   URILE BIIKUSE — MODERN JAVASCRIPT
+========================================= */
+
+
+/* =========================
+   NAVBAR SCROLL EFFECT
+========================= */
+
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", () => {
+
+  if (window.scrollY > 30) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+
+});
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+if (menuBtn && navLinks) {
+
+  menuBtn.addEventListener("click", () => {
+
+    navLinks.classList.toggle("open");
+
+    // Ubah icon hamburger menjadi X
+    if (navLinks.classList.contains("open")) {
+      menuBtn.textContent = "✕";
+    } else {
+      menuBtn.textContent = "☰";
+    }
+
+  });
+
+
+  // Tutup menu setelah memilih halaman
+  document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+      navLinks.classList.remove("open");
+      menuBtn.textContent = "☰";
+
+    });
+
+  });
+
+}
+
+
+/* =========================
+   SMOOTH SCROLL
+========================= */
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+  link.addEventListener("click", function(e) {
+
+    const target = document.querySelector(this.getAttribute("href"));
+
+    if (!target) return;
+
+    e.preventDefault();
+
+    target.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+
+  });
+
+});
+
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+const revealElements = document.querySelectorAll(".reveal");
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+
+        entry.target.classList.add("show");
+
+        revealObserver.unobserve(entry.target);
+
+      }
+
+    });
+
+  },
+  {
+    threshold: 0.12
+  }
+);
+
+
+revealElements.forEach(element => {
+
+  revealObserver.observe(element);
+
+});
+
+
+/* =========================
+   PORTFOLIO FILTER
+========================= */
+
+const filters = document.querySelectorAll(".filter");
+const projects = document.querySelectorAll(".project");
+
+
+filters.forEach(filter => {
+
+  filter.addEventListener("click", () => {
+
+    // Active button
+    filters.forEach(btn => {
+      btn.classList.remove("active");
+    });
+
+    filter.classList.add("active");
+
+
+    const category = filter.dataset.filter;
+
+
+    projects.forEach(project => {
+
+      const projectCategory = project.dataset.category;
+
+      if (
+        category === "all" ||
+        category === projectCategory
+      ) {
+
+        project.style.display = "block";
+
+        // Animasi masuk
+        project.animate(
+          [
+            {
+              opacity: 0,
+              transform: "translateY(15px)"
+            },
+            {
+              opacity: 1,
+              transform: "translateY(0)"
+            }
+          ],
+          {
+            duration: 350,
+            easing: "ease-out"
+          }
+        );
+
+      } else {
+
+        project.style.display = "none";
+
+      }
+
+    });
+
+  });
+
+});
+
+
+/* =========================
+   ACTIVE NAVIGATION
+========================= */
+
+const sections = document.querySelectorAll("section[id]");
+const navItems = document.querySelectorAll(".nav-links a");
+
+
+const sectionObserver = new IntersectionObserver(
+  entries => {
+
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+
+        const currentId = entry.target.getAttribute("id");
+
+        navItems.forEach(link => {
+
+          link.classList.remove("active");
+
+          if (
+            link.getAttribute("href") === "#" + currentId
+          ) {
+
+            link.classList.add("active");
+
+          }
+
+        });
+
+      }
+
+    });
+
+  },
+  {
+    threshold: 0.45
+  }
+);
+
+
+sections.forEach(section => {
+
+  sectionObserver.observe(section);
+
+});
+
+
+/* =========================
+   IMAGE LAZY LOAD
+========================= */
+
+document.querySelectorAll("img").forEach(img => {
+
+  img.loading = "lazy";
+
+});
+
+
+/* =========================
+   PROJECT HOVER EFFECT
+========================= */
+
+projects.forEach(project => {
+
+  project.addEventListener("mousemove", (e) => {
+
+    const rect = project.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const rotateX =
+      ((y / rect.height) - 0.5) * -3;
+
+    const rotateY =
+      ((x / rect.width) - 0.5) * 3;
+
+    project.style.transform =
+      `perspective(700px)
+       rotateX(${rotateX}deg)
+       rotateY(${rotateY}deg)
+       translateY(-5px)`;
+
+  });
+
+
+  project.addEventListener("mouseleave", () => {
+
+    project.style.transform = "";
+
+  });
+
+});
+
+
+/* =========================
+   BUTTON MICRO INTERACTION
+========================= */
+
+document.querySelectorAll(".btn, .contact-button").forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    button.animate(
+      [
+        {
+          transform: "scale(1)"
+        },
+        {
+          transform: "scale(.95)"
+        },
+        {
+          transform: "scale(1)"
+        }
+      ],
+      {
+        duration: 180
+      }
+    );
+
+  });
+
+});
+
+
+/* =========================
+   PAGE LOAD
+========================= */
+
+window.addEventListener("load", () => {
+
+  document.body.classList.add("loaded");
+
+});
+
+
+/* =========================
+   PREVENT IMAGE DRAG
+========================= */
+
+document.querySelectorAll("img").forEach(img => {
+
+  img.addEventListener("dragstart", e => {
+    e.preventDefault();
+  });
+
+});
+
+
+</script>
